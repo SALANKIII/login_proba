@@ -1,9 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:proba/views/home_view.dart';
-import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:proba/controllers/register_view_controller.dart';
 
 class RegisterView extends StatelessWidget {
-  const RegisterView({super.key});
+  RegisterViewController controller = Get.put(RegisterViewController());
 
   @override
   Widget build(BuildContext context) {
@@ -14,59 +15,44 @@ class RegisterView extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(10),
             child: TextField(
+              controller: controller.becenev,
               decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  labelText: 'UserName',
-                  hintText: 'Enter a new username'),
+                  labelText: 'Becenév',
+                  hintText: 'Add meg a beceneved'),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(10),
             child: TextField(
+              controller: controller.email,
               decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Email',
-                  hintText: 'Enter your email'),
+                  hintText: 'Írd be az emailed'),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(10),
             child: TextField(
+              controller: controller.jelszo,
               obscureText: true,
               decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  labelText: 'Password',
-                  hintText: 'Enter your password'),
+                  labelText: 'Jelszó',
+                  hintText: 'Írd be a jelszavad'),
             ),
           ),
-          
           Padding(
-            padding: EdgeInsets.all(10),
-            child: TextField(
-              obscureText: true,
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Password check',
-                  hintText: 'Enter your password again'),
-            ),
-          ),
-          Container(
-                    height: 50,
-                    width: 250,
-                    decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(20)),
-                    child: TextButton(
+                    padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+                    child: CupertinoButton(
+                      color: Colors.blue,
+                      child: Text("Start game"),
                       onPressed: () {
-                        Navigator.push(
-                            context, MaterialPageRoute(builder: (_) => HomeView()));
+                        controller.jatekInditasa();
                       },
-                      child: Text(
-                        'Sing up',
-                        style: TextStyle(color: Colors.white, fontSize: 25),
-                      ),
                     ),
-                  ),
+                  )
         ],
       ),
     );

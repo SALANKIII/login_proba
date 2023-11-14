@@ -13,6 +13,8 @@ dependencies:
   http: ^0.13.4
   fluttertoast: ^8.0.9
   get: ^4.6.5
+  material_design_icons_flutter: ^7.0.7296
+  choice: ^2.3.0
 
 dev_dependencies:
   flutter_test:
