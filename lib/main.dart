@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:proba/views/home_view.dart';
 import 'package:proba/views/login_page.dart';
 
 
@@ -16,10 +17,7 @@ class MainApp extends StatelessWidget {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.red,
-        ),
-        home: LoginPage());
+        home: RadioGomb());
   }
 }
 

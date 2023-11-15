@@ -70,7 +70,7 @@ Widget build(BuildContext context) {
 				SizedBox(
 					height: 100,
 				),
-				Text("BMI Calculator",style: TextStyle(fontWeight: FontWeight.bold,color: Color.fromARGB(255, 255, 255, 255),fontSize: 25),),
+				Text("BMI",style: TextStyle(fontWeight: FontWeight.bold,color: Color.fromARGB(255, 255, 255, 255),fontSize: 25),),
 				SizedBox(
 					height: 30,
 				),
@@ -82,7 +82,7 @@ Widget build(BuildContext context) {
 					decoration: InputDecoration(
 						filled: true,
 						fillColor: Colors.white,
-						hintText: "Enter your weight (kg)",
+						hintText: "Súly(kg)",
 					),
 					),),
 				Padding(padding: const EdgeInsets.only(left: 15,right: 15,top: 15),
@@ -94,7 +94,7 @@ Widget build(BuildContext context) {
 					decoration: InputDecoration(
 						filled: true,
 						fillColor: Colors.white,
-						hintText: "Enter your height (m)",
+						hintText: "Magasság(m)",
 					),
 					),),
 				Padding(
@@ -107,7 +107,7 @@ Widget build(BuildContext context) {
 						onPressed: (){
 							CalCulate_BMI(weight_Controller.text, height_Controller.text);
 						},
-						child: Text("Calculate",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: const Color.fromARGB(255, 255, 255, 255)),),
+						child: Text("Kalkulálás",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: const Color.fromARGB(255, 255, 255, 255)),),
 						style: ButtonStyle(
 							backgroundColor: MaterialStateProperty.all(Color.fromARGB(255, 31, 190, 10)),
 							shape: MaterialStateProperty.all<RoundedRectangleBorder>(

@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:proba/views/home_view.dart';
 import 'package:proba/views/login_view.dart';
 
 class RegisterViewController extends GetxController {
@@ -8,7 +7,7 @@ class RegisterViewController extends GetxController {
   TextEditingController email = TextEditingController();
   TextEditingController jelszo = TextEditingController();
 
-  void jatekInditasa() {
+  void register() {
     if (becenev.text != "" && email.text != "" && jelszo.text != "") {
       Get.to(LoginView(), transition: Transition.cupertino);
     } else if (becenev.text == "") {

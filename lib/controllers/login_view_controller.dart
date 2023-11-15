@@ -1,15 +1,15 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:proba/views/home_view.dart';
-import 'package:proba/views/login_view.dart';
 
 class LoginViewController extends GetxController {
   TextEditingController becenev = TextEditingController();
   TextEditingController jelszo = TextEditingController();
 
-  void jatekInditasa() {
+  void login() {
     if (becenev.text != "" && jelszo.text != "") {
-      Get.to(HomeView(), transition: Transition.cupertino);
+      Get.to(RadioGomb(), transition: Transition.cupertino);
     } else if (becenev.text == "") {
       Get.dialog(CupertinoAlertDialog(
         title: Text("Hiba"),

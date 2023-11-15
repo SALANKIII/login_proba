@@ -16,9 +16,6 @@ class MainApp extends StatelessWidget {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.red,
-        ),
         home: const LoginPage());
   }
 }
@@ -29,39 +26,65 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red,
       body: Center(
         child: Container(
-          color: Colors.red,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('images/blaaa.jpg'),
+              fit: BoxFit.cover,
+            ),
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                'Welcome',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 55,
-                  fontWeight: FontWeight.bold,
-                ),
+              Stack(
+                children: <Widget>[
+                  // Stroked text as border.
+                  Text(
+                    'Üdvözlünk',
+                    style: TextStyle(
+                      fontSize: 40,
+                      foreground: Paint()
+                        ..style = PaintingStyle.stroke
+                        ..strokeWidth = 6
+                        ..color = Colors.black,
+                    ),
+                  ),
+                  // Solid text as fill.
+                  Text(
+                    'Üdvözlünk',
+                    style: TextStyle(
+                      fontSize: 40,
+                      color: Colors.red.shade400,
+                    ),
+                  ),
+                ],
               ),
-              Text(
-                'TO MY APP',
-                style: TextStyle(
-                  color: Colors.white70,
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold,
-                ),
+              Stack(
+                children: <Widget>[
+                  // Stroked text as border.
+                  Text(
+                    'Fitness Appunkba!',
+                    style: TextStyle(
+                      fontSize: 40,
+                      foreground: Paint()
+                        ..style = PaintingStyle.stroke
+                        ..strokeWidth = 6
+                        ..color = Colors.black,
+                    ),
+                  ),
+                  // Solid text as fill.
+                  Text(
+                    'Fitness Appunkba!',
+                    style: TextStyle(
+                      fontSize: 40,
+                      color: Colors.red.shade400,
+                    ),
+                  ),
+                ],
               ),
               SizedBox(
-                height: 20.0,
-              ),
-              CircleAvatar(
-                radius: 100,
-                backgroundImage:
-                    NetworkImage('https://picsum.photos/id/77/250/250'),
-              ),
-              SizedBox(
-                height: 20.0,
+                height: 590.0,
               ),
               ElevatedButton(
                 onPressed: () {
@@ -78,7 +101,7 @@ class LoginPage extends StatelessWidget {
                   foregroundColor: Colors.red,
                   minimumSize: Size(300, 40),
                 ),
-                child: Text('Sign in'),
+                child: Text('Belépés'),
               ),
               SizedBox(
                 height: 7.0,
@@ -97,7 +120,7 @@ class LoginPage extends StatelessWidget {
                     backgroundColor: Colors.redAccent,
                     foregroundColor: Colors.white,
                     minimumSize: Size(300, 40)),
-                child: Text('Sign up'),
+                child: Text('Regisztráció'),
               ),
             ],
           ),
